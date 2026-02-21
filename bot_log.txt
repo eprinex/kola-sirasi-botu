@@ -1,0 +1,21 @@
+[2026-02-21 15:33:12] [INFO] ==================================================
+[2026-02-21 15:33:12] [INFO] 🤖 Kola Sırası Botu Başlatıldı
+[2026-02-21 15:33:12] [WARN] ⚠ Bugün Cumartesi. Bot Perşembe günü çalışır.
+[2026-02-21 15:33:22] [WARN] ⚠ Bugün zaten mesaj gönderildi! Tekrar gönderilmiyor.
+[2026-02-21 15:33:25] [INFO] 📋 6 kişi yüklendi
+[2026-02-21 15:33:25] [INFO] 🎯 Sıradaki kişi: Emrah Kaya
+[2026-02-21 15:33:25] [INFO] WhatsApp Web açılıyor...
+[2026-02-21 15:33:47] [INFO] Mesaj panoya kopyalandı.
+[2026-02-21 15:33:51] [INFO] Mesaj Enter ile gönderildi.
+[2026-02-21 15:33:51] [INFO] Resim gönderme başlatılıyor: C:\Users\yusuf\Desktop\PROJELER\kola\kola_turka.jpg
+[2026-02-21 15:33:56] [INFO] Resim panodan yapıştırılarak gönderildi.
+[2026-02-21 15:33:56] [INFO] ✅ Başarılı! Index: 5 → 0
+[2026-02-21 15:33:56] [INFO] 📅 Sonraki sıra: Yusuf Seker
+[2026-02-21 15:58:12] [INFO] ═══════════════════════════════════════════════════════
+[2026-02-21 15:58:12] [INFO] 🤖 Kola Botu Başlatıldı — ANA MESAJ 📣
+[2026-02-21 15:58:12] [INFO] 📋 6 kişi yüklendi
+[2026-02-21 15:58:12] [INFO] 🎯 Sıradaki kişi: Yusuf Seker
+[2026-02-21 15:58:12] [INFO] Metin olarak gönderiliyor...
+[2026-02-21 15:58:13] [INFO] API yanıtı: {'idMessage': '3EB0C0C097C96CFF12D83F'}
+[2026-02-21 15:58:13] [INFO] ✅ Başarılı! Index 0 → 1
+[2026-02-21 15:58:13] [INFO] 📅 Sonraki sıra: Murat Safak

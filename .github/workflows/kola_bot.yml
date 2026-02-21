@@ -1,0 +1,61 @@
+name: 🥤 Kola Sırası Botu
+
+on:
+  schedule:
+    - cron: '0 7 * * 4'    # Perşembe 10:00 TRT (UTC+3 → UTC 07:00)
+    - cron: '10 15 * * 4'  # Perşembe 18:10 TRT (UTC+3 → UTC 15:10)
+  workflow_dispatch:          # Manuel tetikleme (test için)
+    inputs:
+      reminder_mode:
+        description: 'Hatırlatma modu mu? (akşam mesajı)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write   # index.json commit etmek için gerekli
+
+jobs:
+  kola-bot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Kodu İndir
+        uses: actions/checkout@v4
+
+      - name: 🐍 Python Kur
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 📦 Bağımlılıkları Yükle
+        run: pip install -r requirements.txt
+
+      - name: 🕐 Modu Belirle
+        run: |
+          if [ "${{ github.event.schedule }}" = "10 15 * * 4" ] || \
+             [ "${{ github.event.inputs.reminder_mode }}" = "true" ]; then
+            echo "KOLA_REMINDER=true" >> $GITHUB_ENV
+            echo "Mod: HATIRLATMA (akşam)"
+          else
+            echo "KOLA_REMINDER=false" >> $GITHUB_ENV
+            echo "Mod: ANA MESAJ (sabah)"
+          fi
+
+      - name: 🤖 Kola Botunu Çalıştır
+        env:
+          GREEN_API_URL:       ${{ secrets.GREEN_API_URL }}
+          GREEN_API_MEDIA_URL: ${{ secrets.GREEN_API_MEDIA_URL }}
+          GREEN_API_INSTANCE:  ${{ secrets.GREEN_API_INSTANCE }}
+          GREEN_API_TOKEN:     ${{ secrets.GREEN_API_TOKEN }}
+          WHATSAPP_GROUP_ID:   ${{ secrets.WHATSAPP_GROUP_ID }}
+          GITHUB_RAW_URL:      https://raw.githubusercontent.com/${{ github.repository }}/main
+        run: python kola_bot.py
+
+      - name: 💾 Sıra Değişikliğini Kaydet (sadece ana mesaj)
+        if: env.KOLA_REMINDER == 'false'
+        run: |
+          git config user.name  "Kola Bot 🤖"
+          git config user.email "kola-bot@noreply.github.com"
+          git add index.json bot_log.txt
+          git diff --staged --quiet || git commit -m "🥤 Sıra güncellendi [skip ci]"
+          git push
