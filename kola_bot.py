@@ -238,12 +238,16 @@ def ana_program():
     basari = False
 
     # Resim varsa önce resimle dene
-    if GITHUB_RAW_URL and os.path.exists(RESIM_DOSYASI):
+    if GITHUB_RAW_URL:
         resim_url = f"{GITHUB_RAW_URL}/{RESIM_DOSYASI}"
         log_yaz(f"📷 Resimli mesaj deneniyor: {resim_url}")
-        basari = resim_gonder_url(GROUP_CHAT_ID, resim_url, caption=mesaj)
+        if resim_gonder_url(GROUP_CHAT_ID, resim_url, caption=mesaj):
+            basari = True
+            log_yaz("✅ Resimli mesaj başarıyla gönderildi.")
+        else:
+            log_yaz("⚠ Resimli mesaj başarısız, sadece metin deneniyor...", seviye="WARN")
 
-    # Resim başarısızsa sadece metin gönder
+    # Resim başarısızsa veya hiç yoksa sadece metin gönder
     if not basari:
         log_yaz("Metin olarak gönderiliyor...")
         basari = metin_gonder(GROUP_CHAT_ID, mesaj)
