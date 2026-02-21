@@ -35,3 +35,11 @@
 [2026-02-21 13:34:09] [INFO] Resim API yanıtı: {'idMessage': '3EB05E3CB1C8CECE9E2948'}
 [2026-02-21 13:34:09] [INFO] ✅ Başarılı! Index 2 → 3
 [2026-02-21 13:34:09] [INFO] 📅 Sonraki sıra: Ferit Ekemen
+[2026-02-21 13:40:29] [INFO] ═══════════════════════════════════════════════════════
+[2026-02-21 13:40:29] [INFO] 🤖 Kola Botu Başlatıldı — ANA MESAJ 📣
+[2026-02-21 13:40:29] [INFO] 📋 6 kişi yüklendi
+[2026-02-21 13:40:29] [INFO] 🎯 Sıradaki kişi: Ferit Ekemen
+[2026-02-21 13:40:29] [INFO] 📷 Resimli mesaj deneniyor: https://raw.githubusercontent.com/eprinex/kola-sirasi-botu/main/kola_turka.jpg
+[2026-02-21 13:40:29] [INFO] Resim API yanıtı: {'idMessage': '3EB0A6FB9C1120C7556F98'}
+[2026-02-21 13:40:29] [INFO] ✅ Başarılı! Index 3 → 4
+[2026-02-21 13:40:29] [INFO] 📅 Sonraki sıra: Halil Kutlu
