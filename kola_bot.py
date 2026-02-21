@@ -22,7 +22,7 @@ API_URL        = os.environ.get("GREEN_API_URL",       "https://7103.api.greenap
 MEDIA_API_URL  = os.environ.get("GREEN_API_MEDIA_URL", "https://7103.media.greenapi.com")
 INSTANCE_ID    = os.environ.get("GREEN_API_INSTANCE",  "")
 API_TOKEN      = os.environ.get("GREEN_API_TOKEN",     "")
-GROUP_CHAT_ID  = os.environ.get("WHATSAPP_GROUP_ID",   "120363161853351367@g.us")
+GROUP_CHAT_ID  = os.environ.get("WHATSAPP_GROUP_ID",   "")  # GitHub Secret'tan okunur
 GITHUB_RAW_URL = os.environ.get("GITHUB_RAW_URL",      "")   # Resim için ham GitHub URL'i
 
 IS_REMINDER    = os.environ.get("KOLA_REMINDER", "false").lower() == "true"
