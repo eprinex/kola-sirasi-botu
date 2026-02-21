@@ -59,6 +59,8 @@ jobs:
           git add index.json bot_log.txt
           if ! git diff --staged --quiet; then
             git commit -m "🥤 Sıra güncellendi [skip ci]"
-            git push origin HEAD:master --force-with-lease || (git pull --rebase origin master && git push origin HEAD:master)
+            # Çakışma varsa uzak sunucudaki dosyayı baz alıp bizim değişikliği ekle
+            git pull --rebase -X ours origin master
+            git push origin HEAD:master
           fi
 
