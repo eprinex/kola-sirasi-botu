@@ -52,3 +52,12 @@
 [2026-02-21 13:44:56] [INFO] ✅ Resimli mesaj başarıyla gönderildi.
 [2026-02-21 13:44:56] [INFO] ✅ Başarılı! Index 4 → 5
 [2026-02-21 13:44:56] [INFO] 📅 Sonraki sıra: Emrah Kaya
+[2026-02-26 07:46:45] [INFO] ═══════════════════════════════════════════════════════
+[2026-02-26 07:46:45] [INFO] 🤖 Kola Botu Başlatıldı — ANA MESAJ 📣
+[2026-02-26 07:46:45] [INFO] 📋 6 kişi yüklendi
+[2026-02-26 07:46:45] [INFO] 🎯 Sıradaki kişi: Emrah Kaya
+[2026-02-26 07:46:45] [INFO] 📷 Resimli mesaj deneniyor: https://raw.githubusercontent.com/eprinex/kola-sirasi-botu/master/kola_turka.jpg
+[2026-02-26 07:46:46] [INFO] Resim API yanıtı: {'idMessage': '3EB0E0DC4EEFEA14801ED7'}
+[2026-02-26 07:46:46] [INFO] ✅ Resimli mesaj başarıyla gönderildi.
+[2026-02-26 07:46:46] [INFO] ✅ Başarılı! Index 5 → 0
+[2026-02-26 07:46:46] [INFO] 📅 Sonraki sıra: Yusuf Seker
