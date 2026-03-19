@@ -79,3 +79,12 @@
 [2026-03-12 07:41:27] [INFO] ✅ Resimli mesaj başarıyla gönderildi.
 [2026-03-12 07:41:27] [INFO] ✅ Başarılı! Index 1 → 2
 [2026-03-12 07:41:27] [INFO] 📅 Sonraki sıra: Adem Sarp
+[2026-03-19 07:42:31] [INFO] ═══════════════════════════════════════════════════════
+[2026-03-19 07:42:31] [INFO] 🤖 Kola Botu Başlatıldı — ANA MESAJ 📣
+[2026-03-19 07:42:31] [INFO] 📋 6 kişi yüklendi
+[2026-03-19 07:42:31] [INFO] 🎯 Sıradaki kişi: Adem Sarp
+[2026-03-19 07:42:31] [INFO] 📷 Resimli mesaj deneniyor: https://raw.githubusercontent.com/eprinex/kola-sirasi-botu/master/kola_turka.jpg
+[2026-03-19 07:42:31] [INFO] Resim API yanıtı: {'idMessage': '3EB0309765DECFDD521C19'}
+[2026-03-19 07:42:31] [INFO] ✅ Resimli mesaj başarıyla gönderildi.
+[2026-03-19 07:42:31] [INFO] ✅ Başarılı! Index 2 → 3
+[2026-03-19 07:42:31] [INFO] 📅 Sonraki sıra: Ferit Ekemen
