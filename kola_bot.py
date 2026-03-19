@@ -25,7 +25,10 @@ API_TOKEN      = os.environ.get("GREEN_API_TOKEN",     "")
 GROUP_CHAT_ID  = os.environ.get("WHATSAPP_GROUP_ID",   "")  # GitHub Secret'tan okunur
 GITHUB_RAW_URL = os.environ.get("GITHUB_RAW_URL",      "")   # Resim için ham GitHub URL'i
 
+ADMIN_NUMBER   = "905337906205@c.us" # Yusuf'un kendi WhatsApp numarası (DM için)
+
 IS_REMINDER    = os.environ.get("KOLA_REMINDER", "false").lower() == "true"
+
 
 ISIM_DOSYASI   = "kola_sirasi.txt"
 INDEX_DOSYASI  = "index.json"
@@ -225,6 +228,9 @@ def ana_program():
 
         if metin_gonder(GROUP_CHAT_ID, hatirlatma_mesaji(kisi)):
             log_yaz("✅ Hatırlatma gönderildi!")
+            if "Yusuf" in str(kisi):
+                log_yaz("👉 Yusuf'a özel DM gönderiliyor...")
+                metin_gonder(ADMIN_NUMBER, "🚨 *DİKKAT:* Yarın kola sırası sende patron! Gruba otomatik hatırlatma atıldı.")
         else:
             log_yaz("❌ Hatırlatma gönderilemedi!", "ERROR")
             sys.exit(1)
@@ -253,6 +259,10 @@ def ana_program():
         basari = metin_gonder(GROUP_CHAT_ID, mesaj)
 
     if basari:
+        if "Yusuf" in siradaki:
+            log_yaz("👉 Yusuf'a özel DM gönderiliyor...")
+            metin_gonder(ADMIN_NUMBER, "🚨 *DİKKAT:* Bu hafta kola sırası sende patron! Gruba sabah duyurusu otomatik atıldı.")
+
         yeni_index = (current_index + 1) % len(isimler)
         bugun = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         index_guncelle(yeni_index, bugun, siradaki)
