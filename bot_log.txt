@@ -106,3 +106,14 @@
 [2026-04-02 08:01:03] [INFO] ✅ Resimli mesaj başarıyla gönderildi.
 [2026-04-02 08:01:03] [INFO] ✅ Başarılı! Index 5 → 0
 [2026-04-02 08:01:03] [INFO] 📅 Sonraki sıra: Yusuf Seker
+[2026-04-09 08:15:38] [INFO] ═══════════════════════════════════════════════════════
+[2026-04-09 08:15:38] [INFO] 🤖 Kola Botu Başlatıldı — ANA MESAJ 📣
+[2026-04-09 08:15:38] [INFO] 📋 6 kişi yüklendi
+[2026-04-09 08:15:38] [INFO] 🎯 Sıradaki kişi: Yusuf Seker
+[2026-04-09 08:15:38] [INFO] 📷 Resimli mesaj deneniyor: https://raw.githubusercontent.com/eprinex/kola-sirasi-botu/master/kola_turka.jpg
+[2026-04-09 08:15:38] [INFO] Resim API yanıtı: {'idMessage': '3EB0FC8B75F7467290BF14'}
+[2026-04-09 08:15:38] [INFO] ✅ Resimli mesaj başarıyla gönderildi.
+[2026-04-09 08:15:38] [INFO] 👉 Yusuf'a özel DM gönderiliyor...
+[2026-04-09 08:15:39] [INFO] API yanıtı: {'idMessage': '3EB0C7C015C1A857892FFF'}
+[2026-04-09 08:15:39] [INFO] ✅ Başarılı! Index 0 → 1
+[2026-04-09 08:15:39] [INFO] 📅 Sonraki sıra: Murat Safak
