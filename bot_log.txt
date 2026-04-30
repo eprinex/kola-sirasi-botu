@@ -144,3 +144,18 @@
 [2026-04-30 09:07:55] [INFO] ✅ Resimli mesaj başarıyla gönderildi.
 [2026-04-30 09:07:55] [INFO] ✅ Başarılı! Index 3 → 4
 [2026-04-30 09:07:55] [INFO] 📅 Sonraki sıra: Halil Kutlu
+[2026-04-30 22:29:37] [ERROR] Eksik değişkenler: GREEN_API_INSTANCE, GREEN_API_TOKEN, WHATSAPP_GROUP_ID
+[2026-04-30 22:29:37] [ERROR] GitHub Secrets veya ortam değişkenlerini ayarlayın.
+[2026-04-30 22:31:30] [ERROR] Eksik değişkenler: GREEN_API_INSTANCE, GREEN_API_TOKEN, WHATSAPP_GROUP_ID
+[2026-04-30 22:31:30] [ERROR] GitHub Secrets veya ortam değişkenlerini ayarlayın.
+[2026-04-30 22:33:08] [ERROR] Eksik değişkenler: WHATSAPP_GROUP_ID
+[2026-04-30 22:33:08] [ERROR] GitHub Secrets veya ortam değişkenlerini ayarlayın.
+[2026-04-30 22:43:17] [INFO] =======================================================
+[2026-04-30 22:43:17] [INFO] Kola Botu Baslatildi - ANA MESAJ
+[2026-04-30 22:43:17] [INFO] 6 kisi yuklendi
+[2026-04-30 22:43:17] [INFO] Yarin (2026-05-01) tatil: Emek ve Dayanışma Günü
+[2026-04-30 22:43:17] [INFO] Sonraki Cuma: 2026-05-08
+[2026-04-30 22:43:17] [INFO] Siradaki kisi: Ferit Ekemen
+[2026-04-30 22:43:17] [INFO] Tatil tespit edildi: Emek ve Dayanışma Günü - Tatil mesaji gonderiliyor
+[2026-04-30 22:43:19] [INFO] API yaniti: {'idMessage': '3EB0CBCA483378BDFB4876'}
+[2026-04-30 22:43:19] [INFO] Tatil mesaji gonderildi! Sira degismedi.
