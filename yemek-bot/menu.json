@@ -1,0 +1,36 @@
+{
+  "hafta": "",
+  "son_guncelleme": "2026-04-30 23:34:21",
+  "menu": {
+    "Pazartesi": [
+      "Mercimek Çorbası",
+      "Izgara Tavuk",
+      "Bulgur Pilavı",
+      "Mevsim Salata"
+    ],
+    "Sali": [
+      "Ezogelin Çorbası",
+      "Et Sote",
+      "Pirinç Pilavı",
+      "Cacık"
+    ],
+    "Carsamba": [
+      "Tarhana Çorbası",
+      "Fırında Köfte",
+      "Patates Püresi",
+      "Yoğurt"
+    ],
+    "Persembe": [
+      "Domates Çorbası",
+      "Tavuklu Makarna",
+      "Zeytinyağlı Fasulye",
+      "Ayran"
+    ],
+    "Cuma": [
+      "Yayla Çorbası",
+      "Balık Izgara",
+      "Sebze Garnitür",
+      "Meyve"
+    ]
+  }
+}
