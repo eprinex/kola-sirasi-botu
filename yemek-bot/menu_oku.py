@@ -70,9 +70,34 @@ def mesajlari_getir(chat_id, limit=20):
         log(f"Mesajlar alınamadı: {e}", "ERROR")
         return []
 
+def gun_normalize(metin):
+    """Metinden gün adını normalize eder"""
+    metin = metin.strip().lower()
+    metin = metin.replace("ş", "s").replace("ı", "i").replace("ç", "c").replace("ğ", "g").replace("ü", "u").replace("ö", "o")
+    for gun_key, gun_val in GUN_MAP.items():
+        if gun_key in metin:
+            return gun_val
+    return None
+
 def menu_parse(metin):
+    """
+    İki formatı destekler:
+
+    Format 1 (klasik):
+      MENÜ:
+      Pazartesi: Ezogelin Çorbası, Tavuk, Ayran
+      Salı: Mercimek, Köfte
+
+    Format 2 (tarihli, alt satır):
+      MENÜ:
+      4 Mayıs Pazartesi
+      Mercimek Çorbası
+      Izgara Tavuk
+      5 Mayıs Salı
+      Ezogelin Çorbası
+      Et Sote
+    """
     satirlar = metin.strip().splitlines()
-    menu = {k: [] for k in GUN_MAP.values() if k not in menu_parse.__dict__}
     menu = {"Pazartesi": [], "Sali": [], "Carsamba": [], "Persembe": [], "Cuma": []}
 
     mevcut_gun = None
@@ -83,24 +108,37 @@ def menu_parse(metin):
         if not satir:
             continue
 
+        # MENÜ: başlığını yakala
         if satir.upper().startswith("MENÜ:") or satir.upper().startswith("MENU:"):
             menu_basladi = True
-            continue
+            # Aynı satırda yemek varsa (MENÜ: Pazartesi: ...) devam et
+            satir = satir.split(":", 1)[1].strip() if ":" in satir else ""
+            if not satir:
+                continue
 
         if not menu_basladi:
             continue
 
+        # Format 1: "Pazartesi: yemek1, yemek2"
         if ":" in satir:
             gun_kismi, yemek_kismi = satir.split(":", 1)
-            gun_key = gun_kismi.strip().lower()
-            # Türkçe karakterleri normalize et
-            gun_key = gun_key.replace("ş", "s").replace("ı", "i").replace("ç", "c")
-
-            if gun_key in GUN_MAP:
-                mevcut_gun = GUN_MAP[gun_key]
+            gun = gun_normalize(gun_kismi)
+            if gun:
+                mevcut_gun = gun
                 yemekler = [y.strip() for y in yemek_kismi.split(",") if y.strip()]
-                menu[mevcut_gun] = yemekler
-        elif mevcut_gun:
+                if yemekler:
+                    menu[mevcut_gun] = yemekler
+                continue
+
+        # Format 2: Satırda gün adı var mı? (örn: "4 Mayıs Pazartesi")
+        gun = gun_normalize(satir)
+        if gun:
+            mevcut_gun = gun
+            continue
+
+        # Yemek satırı - mevcut güne ekle
+        if mevcut_gun and satir:
+            # Virgülle ayrılmış birden fazla yemek olabilir
             yemekler = [y.strip() for y in satir.split(",") if y.strip()]
             menu[mevcut_gun].extend(yemekler)
 
