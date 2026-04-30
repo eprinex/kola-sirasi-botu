@@ -35,8 +35,10 @@ MAX_LOG_BOYUT  = 500_000
 # ─── Türkiye Resmi Tatilleri ───────────────────────────────────────────────
 
 def turkiye_tatilleri(yil: int) -> dict:
-    """Türkiye resmi tatillerini döndürür"""
-    return {
+    """Türkiye resmi tatillerini döndürür (sabit + dini)"""
+
+    # Sabit milli tatiller
+    tatiller = {
         date(yil, 1, 1):   "Yılbaşı",
         date(yil, 4, 23):  "Ulusal Egemenlik ve Çocuk Bayramı",
         date(yil, 5, 1):   "Emek ve Dayanışma Günü",
@@ -46,35 +48,74 @@ def turkiye_tatilleri(yil: int) -> dict:
         date(yil, 10, 29): "Cumhuriyet Bayramı",
     }
 
-def dini_tatiller_api(yil: int) -> dict:
-    """Dini tatilleri Calendarific API'den çeker. API key yoksa boş döner."""
-    api_key = os.environ.get("CALENDARIFIC_API_KEY", "")
-    if not api_key:
-        return {}
-    try:
-        r = requests.get(
-            "https://calendarific.com/api/v2/holidays",
-            params={"api_key": api_key, "country": "TR", "year": yil, "type": "religious"},
-            timeout=10
-        )
-        r.raise_for_status()
-        tatiller = {}
-        for h in r.json().get("response", {}).get("holidays", []):
-            d = h.get("date", {}).get("iso", "")[:10]
-            try:
-                tatiller[date.fromisoformat(d)] = h.get("name", "Dini Tatil")
-            except Exception:
-                pass
-        return tatiller
-    except Exception as e:
-        log_yaz(f"Dini tatil API hatasi: {e}", "WARN")
-        return {}
+    # Dini tatiller (Ramazan ve Kurban Bayramı - her yıl değişir)
+    # Ramazan Bayramı: 1 gün arefe + 3 gün bayram = 4 gün
+    # Kurban Bayramı: 1 gün arefe + 4 gün bayram = 5 gün
+    dini = {
+        # ── 2025 ──────────────────────────────────────────────────
+        # Ramazan Bayramı 2025: 30 Mart - 1 Nisan
+        date(2025, 3, 29): "Ramazan Bayramı Arefesi",
+        date(2025, 3, 30): "Ramazan Bayramı 1. Günü",
+        date(2025, 3, 31): "Ramazan Bayramı 2. Günü",
+        date(2025, 4, 1):  "Ramazan Bayramı 3. Günü",
+        # Kurban Bayramı 2025: 5-8 Haziran
+        date(2025, 6, 4):  "Kurban Bayramı Arefesi",
+        date(2025, 6, 5):  "Kurban Bayramı 1. Günü",
+        date(2025, 6, 6):  "Kurban Bayramı 2. Günü",
+        date(2025, 6, 7):  "Kurban Bayramı 3. Günü",
+        date(2025, 6, 8):  "Kurban Bayramı 4. Günü",
+
+        # ── 2026 ──────────────────────────────────────────────────
+        # Ramazan Bayramı 2026: 19-21 Mart
+        date(2026, 3, 18): "Ramazan Bayramı Arefesi",
+        date(2026, 3, 19): "Ramazan Bayramı 1. Günü",
+        date(2026, 3, 20): "Ramazan Bayramı 2. Günü",
+        date(2026, 3, 21): "Ramazan Bayramı 3. Günü",
+        # Kurban Bayramı 2026: 26-29 Mayıs
+        date(2026, 5, 25): "Kurban Bayramı Arefesi",
+        date(2026, 5, 26): "Kurban Bayramı 1. Günü",
+        date(2026, 5, 27): "Kurban Bayramı 2. Günü",
+        date(2026, 5, 28): "Kurban Bayramı 3. Günü",
+        date(2026, 5, 29): "Kurban Bayramı 4. Günü",
+
+        # ── 2027 ──────────────────────────────────────────────────
+        # Ramazan Bayramı 2027: 8-10 Mart
+        date(2027, 3, 7):  "Ramazan Bayramı Arefesi",
+        date(2027, 3, 8):  "Ramazan Bayramı 1. Günü",
+        date(2027, 3, 9):  "Ramazan Bayramı 2. Günü",
+        date(2027, 3, 10): "Ramazan Bayramı 3. Günü",
+        # Kurban Bayramı 2027: 15-18 Mayıs
+        date(2027, 5, 14): "Kurban Bayramı Arefesi",
+        date(2027, 5, 15): "Kurban Bayramı 1. Günü",
+        date(2027, 5, 16): "Kurban Bayramı 2. Günü",
+        date(2027, 5, 17): "Kurban Bayramı 3. Günü",
+        date(2027, 5, 18): "Kurban Bayramı 4. Günü",
+
+        # ── 2028 ──────────────────────────────────────────────────
+        # Ramazan Bayramı 2028: 25-27 Şubat
+        date(2028, 2, 24): "Ramazan Bayramı Arefesi",
+        date(2028, 2, 25): "Ramazan Bayramı 1. Günü",
+        date(2028, 2, 26): "Ramazan Bayramı 2. Günü",
+        date(2028, 2, 27): "Ramazan Bayramı 3. Günü",
+        # Kurban Bayramı 2028: 3-6 Mayıs
+        date(2028, 5, 2):  "Kurban Bayramı Arefesi",
+        date(2028, 5, 3):  "Kurban Bayramı 1. Günü",
+        date(2028, 5, 4):  "Kurban Bayramı 2. Günü",
+        date(2028, 5, 5):  "Kurban Bayramı 3. Günü",
+        date(2028, 5, 6):  "Kurban Bayramı 4. Günü",
+    }
+
+    # Sadece ilgili yılın dini tatillerini ekle
+    for gun, ad in dini.items():
+        if gun.year == yil:
+            tatiller[gun] = ad
+
+    return tatiller
 
 def tatil_mi(kontrol_tarihi: date):
     """Verilen tarihin tatil olup olmadığını kontrol eder."""
     yil = kontrol_tarihi.year
     tatiller = turkiye_tatilleri(yil)
-    tatiller.update(dini_tatiller_api(yil))
     if kontrol_tarihi in tatiller:
         return True, tatiller[kontrol_tarihi]
     return False, ""
