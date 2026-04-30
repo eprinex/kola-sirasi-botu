@@ -52,19 +52,6 @@ def turkiye_tatilleri(yil: int) -> dict:
     # Ramazan Bayramı: 1 gün arefe + 3 gün bayram = 4 gün
     # Kurban Bayramı: 1 gün arefe + 4 gün bayram = 5 gün
     dini = {
-        # ── 2025 ──────────────────────────────────────────────────
-        # Ramazan Bayramı 2025: 30 Mart - 1 Nisan
-        date(2025, 3, 29): "Ramazan Bayramı Arefesi",
-        date(2025, 3, 30): "Ramazan Bayramı 1. Günü",
-        date(2025, 3, 31): "Ramazan Bayramı 2. Günü",
-        date(2025, 4, 1):  "Ramazan Bayramı 3. Günü",
-        # Kurban Bayramı 2025: 5-8 Haziran
-        date(2025, 6, 4):  "Kurban Bayramı Arefesi",
-        date(2025, 6, 5):  "Kurban Bayramı 1. Günü",
-        date(2025, 6, 6):  "Kurban Bayramı 2. Günü",
-        date(2025, 6, 7):  "Kurban Bayramı 3. Günü",
-        date(2025, 6, 8):  "Kurban Bayramı 4. Günü",
-
         # ── 2026 ──────────────────────────────────────────────────
         # Ramazan Bayramı 2026: 19-21 Mart
         date(2026, 3, 18): "Ramazan Bayramı Arefesi",
