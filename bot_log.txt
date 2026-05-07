@@ -159,3 +159,12 @@
 [2026-04-30 22:43:17] [INFO] Tatil tespit edildi: Emek ve Dayanışma Günü - Tatil mesaji gonderiliyor
 [2026-04-30 22:43:19] [INFO] API yaniti: {'idMessage': '3EB0CBCA483378BDFB4876'}
 [2026-04-30 22:43:19] [INFO] Tatil mesaji gonderildi! Sira degismedi.
+[2026-05-07 09:26:48] [INFO] =======================================================
+[2026-05-07 09:26:48] [INFO] Kola Botu Baslatildi - ANA MESAJ
+[2026-05-07 09:26:48] [INFO] 6 kisi yuklendi
+[2026-05-07 09:26:48] [INFO] Siradaki kisi: Ferit Ekemen
+[2026-05-07 09:26:48] [INFO] Resimli mesaj deneniyor...
+[2026-05-07 09:26:49] [INFO] Resim API yaniti: {'idMessage': '3EB08307BD25B1849CDDBA'}
+[2026-05-07 09:26:49] [INFO] Resimli mesaj gonderildi.
+[2026-05-07 09:26:49] [INFO] Basarili! Index 3 -> 4
+[2026-05-07 09:26:49] [INFO] Sonraki sira: Halil Kutlu
