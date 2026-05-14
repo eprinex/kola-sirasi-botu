@@ -1,36 +1,35 @@
 {
-  "hafta": "",
-  "son_guncelleme": "2026-04-30 23:34:21",
+  "hafta": "18-22 Mayıs 2026",
+  "son_guncelleme": "2026-05-14 20:22:00",
   "menu": {
     "Pazartesi": [
       "Mercimek Çorbası",
-      "Izgara Tavuk",
-      "Bulgur Pilavı",
-      "Mevsim Salata"
+      "Tavuk Sote",
+      "Pilav",
+      "Çilek"
     ],
     "Sali": [
-      "Ezogelin Çorbası",
-      "Et Sote",
-      "Pirinç Pilavı",
-      "Cacık"
+      "🇹🇷 19 MAYIS ATATÜRK'Ü ANMA, GENÇLİK VE SPOR BAYRAMI",
+      "Resmi Tatil - Yemek Servisi Yoktur"
     ],
     "Carsamba": [
-      "Tarhana Çorbası",
-      "Fırında Köfte",
-      "Patates Püresi",
-      "Yoğurt"
+      "Domates Çorbası",
+      "Patlıcan Musakka",
+      "Pilav",
+      "Cacık"
     ],
     "Persembe": [
-      "Domates Çorbası",
-      "Tavuklu Makarna",
-      "Zeytinyağlı Fasulye",
-      "Ayran"
+      "Ezogelin Çorba",
+      "Arnavut Ciğeri + Patates",
+      "Makarna",
+      "Kabak Tatlısı",
+      "Soğan Söğüş"
     ],
     "Cuma": [
-      "Yayla Çorbası",
-      "Balık Izgara",
-      "Sebze Garnitür",
-      "Meyve"
+      "Şehriye Çorbası",
+      "Orman Kebabı",
+      "Pilav",
+      "Mevsim Salata"
     ]
   }
 }
