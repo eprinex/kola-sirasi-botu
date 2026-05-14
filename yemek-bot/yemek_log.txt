@@ -1,0 +1,12 @@
+[2026-04-30 23:13:40] [INFO] =======================================================
+[2026-04-30 23:13:40] [INFO] Yemek Botu Başlatıldı
+[2026-04-30 23:13:40] [INFO] Bugün: Perşembe (2026-04-30)
+[2026-04-30 23:13:40] [INFO] Bugünün yemekleri: Yayla Çorbası, Etli Güveç, Ayran
+[2026-04-30 23:13:42] [INFO] API yanıtı: {'idMessage': '3EB05AF8DE2208B4F960C2'}
+[2026-04-30 23:13:42] [INFO] Mesaj başarıyla gönderildi!
+[2026-04-30 23:24:13] [INFO] =======================================================
+[2026-04-30 23:24:13] [INFO] Yemek Botu Başlatıldı
+[2026-04-30 23:24:13] [INFO] Bugün: Perşembe (2026-04-30)
+[2026-04-30 23:24:13] [INFO] Bugünün yemekleri: Yayla Çorbası, Etli Güveç, Ayran
+[2026-04-30 23:24:14] [INFO] API yanıtı: {'idMessage': '3EB0A091F668C48C23C98B'}
+[2026-04-30 23:24:14] [INFO] Mesaj başarıyla gönderildi!
