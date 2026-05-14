@@ -2,8 +2,8 @@ name: Yemek Botu
 
 on:
   schedule:
-    - cron: '0 7 * * 1-5'   # Her sabah 10:00 TRT (Pzt-Cuma)
-    - cron: '30 7 * * 1'    # Pazartesi 10:30 TRT - Menü okuma
+    - cron: '45 6 * * 1-5'   # Her sabah 09:45 TRT (UTC 06:45) - Gecikme payı ile
+    - cron: '15 7 * * 1'    # Pazartesi 10:15 TRT - Menü okuma
   workflow_dispatch:
     inputs:
       mode:
@@ -35,34 +35,36 @@ jobs:
 
       - name: Modu Belirle
         run: |
-          if [ "${{ github.event.schedule }}" = "30 7 * * 1" ] || \
+          if [ "${{ github.event.schedule }}" = "15 7 * * 1" ] || \
              [ "${{ github.event.inputs.mode }}" = "menu_oku" ]; then
             echo "BOT_MODE=menu_oku" >> $GITHUB_ENV
           else
             echo "BOT_MODE=gunluk_mesaj" >> $GITHUB_ENV
           fi
 
-      - name: Menü Oku (Pazartesi 10:30)
+      - name: Menü Oku (Pazartesi)
         if: env.BOT_MODE == 'menu_oku'
         env:
           GREEN_API_INSTANCE:  ${{ secrets.GREEN_API_INSTANCE }}
           GREEN_API_TOKEN:     ${{ secrets.GREEN_API_TOKEN }}
-          YEMEK_BOT_GROUP_ID:  ${{ secrets.YEMEK_BOT_GROUP_ID }}
+          YEMEK_BOT_GROUP_ID:  ${{ secrets.WHATSAPP_GROUP_ID }}
+        working-directory: ./yemek-bot
         run: python menu_oku.py
 
-      - name: Günlük Mesaj Gönder (10:00)
+      - name: Günlük Mesaj Gönder
         if: env.BOT_MODE == 'gunluk_mesaj'
         env:
           GREEN_API_INSTANCE: ${{ secrets.GREEN_API_INSTANCE }}
           GREEN_API_TOKEN:    ${{ secrets.GREEN_API_TOKEN }}
-          YEMEK_GROUP_ID:     ${{ secrets.YEMEK_GROUP_ID }}
+          YEMEK_GROUP_ID:     ${{ secrets.WHATSAPP_GROUP_ID }}
+        working-directory: ./yemek-bot
         run: python yemek_bot.py
 
       - name: Değişiklikleri Kaydet
         run: |
           git config user.name "Yemek Bot"
           git config user.email "yemek-bot@noreply.github.com"
-          git add menu.json yemek_log.txt
+          git add yemek-bot/menu.json yemek-bot/yemek_log.txt
           if ! git diff --staged --quiet; then
             git commit -m "Menü/log güncellendi [skip ci]"
             git pull --rebase -X ours origin main
