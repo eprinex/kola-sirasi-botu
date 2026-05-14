@@ -168,3 +168,12 @@
 [2026-05-07 09:26:49] [INFO] Resimli mesaj gonderildi.
 [2026-05-07 09:26:49] [INFO] Basarili! Index 3 -> 4
 [2026-05-07 09:26:49] [INFO] Sonraki sira: Halil Kutlu
+[2026-05-14 09:28:47] [INFO] =======================================================
+[2026-05-14 09:28:47] [INFO] Kola Botu Baslatildi - ANA MESAJ
+[2026-05-14 09:28:47] [INFO] 6 kisi yuklendi
+[2026-05-14 09:28:47] [INFO] Siradaki kisi: Halil Kutlu
+[2026-05-14 09:28:47] [INFO] Resimli mesaj deneniyor...
+[2026-05-14 09:28:48] [INFO] Resim API yaniti: {'idMessage': '3EB05022A41C06BDCD217E'}
+[2026-05-14 09:28:48] [INFO] Resimli mesaj gonderildi.
+[2026-05-14 09:28:48] [INFO] Basarili! Index 4 -> 5
+[2026-05-14 09:28:48] [INFO] Sonraki sira: Emrah Kaya
